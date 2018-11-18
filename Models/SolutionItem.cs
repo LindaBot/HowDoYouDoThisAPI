@@ -12,8 +12,7 @@ namespace HowDoYouDoThis.Models
         public string answer { get; set; }
         public string description { get; set; }
         public string workingImage { get; set; }
-        public string author { get; set; }
-        public int authorID { get; set; }
         public int upvotes { get; set; }
+        public int authorID { get; set; }
     }
 }

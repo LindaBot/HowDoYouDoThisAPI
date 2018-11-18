@@ -23,11 +23,12 @@ namespace HowDoYouDoThis.Models
                 context.QuestionItem.AddRange(
                     new QuestionItem
                     {
-                        questionTitle = "How do you do this question?",
-                        questionDescription = "This is the description",
-                        questionDiagramURL = "https://i.kym-cdn.com/photos/images/original/001/371/723/be6.jpg",
-                        solutionIDs = ""
-                    }
+                        title = "How do you do this question?",
+                        description = "This is the description",
+                        diagramURL = "https://i.kym-cdn.com/photos/images/original/001/371/723/be6.jpg",
+                        tag = "Life",
+                        authorID = 1
+            }
                 );
 
                 context.SolutionItem.AddRange(
@@ -37,7 +38,6 @@ namespace HowDoYouDoThis.Models
                         answer = "42",
                         description = "This is how you get the anwer: 1 + 41 = 42",
                         workingImage = "https://live.worldbank.org/sites/default/files/styles/focal_point_bio_detail/public/experts/billgates.jpg",
-                        author = "Me",
                         authorID = 1,
                         upvotes = 0
                     }
@@ -55,7 +55,6 @@ namespace HowDoYouDoThis.Models
                         TagID = "TAG-ID"
                     }
                 );
-
 
                 context.SaveChanges();
             }

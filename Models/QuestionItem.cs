@@ -8,9 +8,10 @@ namespace HowDoYouDoThis.Models
     public class QuestionItem
     {
         public int ID { get; set; }
-        public string questionTitle { get; set; }
-        public string questionDescription { get; set; }
-        public string questionDiagramURL { get; set; }
-        public string solutionIDs { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public string tag { get; set; }
+        public string diagramURL { get; set; }
+        public int authorID { get; set; }
     }
 }
