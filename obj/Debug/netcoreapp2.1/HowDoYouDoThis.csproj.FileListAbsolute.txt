@@ -1,0 +1,14 @@
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\bin\Debug\netcoreapp2.1\HowDoYouDoThis.deps.json
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\bin\Debug\netcoreapp2.1\HowDoYouDoThis.runtimeconfig.json
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\bin\Debug\netcoreapp2.1\HowDoYouDoThis.runtimeconfig.dev.json
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\bin\Debug\netcoreapp2.1\HowDoYouDoThis.dll
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\bin\Debug\netcoreapp2.1\HowDoYouDoThis.pdb
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.csprojAssemblyReference.cache
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.csproj.CoreCompileInputs.cache
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.RazorAssemblyInfo.cache
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.RazorAssemblyInfo.cs
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.AssemblyInfoInputs.cache
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.AssemblyInfo.cs
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.RazorTargetAssemblyInfo.cache
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.dll
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.pdb
