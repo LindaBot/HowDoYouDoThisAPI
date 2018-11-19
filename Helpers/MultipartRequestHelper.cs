@@ -27,8 +27,6 @@ namespace MemeBank.Helpers
 
         public static bool IsMultipartContentType(string contentType)
         {
-            //return !string.IsNullOrEmpty(contentType)
-            //       && contentType.Contains("multipart/", StringComparison.OrdinalIgnoreCase);
             return true;
         }
 
