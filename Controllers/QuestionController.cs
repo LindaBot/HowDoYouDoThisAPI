@@ -98,7 +98,6 @@ namespace HowDoYouDoThis.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             var questionItem = await _context.QuestionItem.FindAsync(id);
             if (questionItem == null)
             {
@@ -144,9 +143,7 @@ namespace HowDoYouDoThis.Controllers
                         return BadRequest("An error has occured while uploading your file. Please try again.");
                     }
                     System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
-                    
-                    
-                    
+                    questionItem.diagramURL = cloudBlock.SnapshotQualifiedUri.AbsoluteUri;
                 }
             }
             catch (Exception)
