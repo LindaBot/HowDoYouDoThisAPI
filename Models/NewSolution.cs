@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace HowDoYouDoThis.Models
 {
-    public class NewQuestion
+    public class NewSolution
     {
-        public string title { get; set; }
+        public int questionID { get; set; }
+        public string answer { get; set; }
         public string description { get; set; }
-        public string tag { get; set; }
-        public IFormFile image { get; set; }
+        public IFormFile workingImage { get; set; }
         public int authorID { get; set; }
     }
 }

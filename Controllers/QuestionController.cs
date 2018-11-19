@@ -88,20 +88,7 @@ namespace HowDoYouDoThis.Controllers
             return NoContent();
         }
 
-        // POST: api/Question
-        [HttpPost]
-        public async Task<IActionResult> PostQuestionItem([FromBody] QuestionItem questionItem)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            _context.QuestionItem.Add(questionItem);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetQuestionItem", new { id = questionItem.ID }, questionItem);
-        }
+        
 
         // DELETE: api/Question/5
         [HttpDelete("{id}")]
@@ -137,40 +124,47 @@ namespace HowDoYouDoThis.Controllers
             return returned;
         }
 
-        [HttpPost, Route("upload")]
-        public async Task<IActionResult> UploadFile([FromForm]newQuestion newQuestion)
+        [HttpPost]
+        public async Task<IActionResult> PostQuestionItem([FromForm]NewQuestion newQuestion)
         {
             if (!MultipartRequestHelper.IsMultipartContentType(Request.ContentType))
             {
                 return BadRequest($"Expected a multipart request, but got {Request.ContentType}");
             }
+            QuestionItem questionItem = new QuestionItem();
             try
             {
                 using (var stream = newQuestion.image.OpenReadStream())
                 {
-                    var cloudBlock = await UploadToBlob(newQuestion.image.FileName, "question-diagrams", null, stream);
+                    var cloudBlock = await UploadToBlob(newQuestion.image.FileName, null, stream);
                     //// Retrieve the filename of the file you have uploaded
                     //var filename = provider.FileData.FirstOrDefault()?.LocalFileName;
                     if (string.IsNullOrEmpty(cloudBlock.StorageUri.ToString()))
                     {
                         return BadRequest("An error has occured while uploading your file. Please try again.");
                     }
-                    
-
-                    QuestionItem questionItem = new QuestionItem();
-                    questionItem.title = newQuestion.title;
-                    questionItem.description = newQuestion.description;
-                    questionItem.tag = newQuestion.tag;
-                    questionItem.authorID = newQuestion.authorID;
-
                     System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
-                    questionItem.diagramURL = cloudBlock.SnapshotQualifiedUri.AbsoluteUri;
-
-                    _context.QuestionItem.Add(questionItem);
-                    await _context.SaveChangesAsync();
-
-                    return Ok($"File: {questionItem.title} has successfully uploaded");
+                    
+                    
+                    
                 }
+            }
+            catch (Exception)
+            {
+                // No images was received
+                questionItem.diagramURL = "";
+            }
+
+            try
+            {
+                questionItem.title = newQuestion.title;
+                questionItem.description = newQuestion.description;
+                questionItem.tag = newQuestion.tag;
+                questionItem.authorID = newQuestion.authorID;
+
+                _context.QuestionItem.Add(questionItem);
+                await _context.SaveChangesAsync();
+                return Ok($"File: {questionItem.title} has successfully uploaded");
             }
             catch (Exception ex)
             {
@@ -180,15 +174,15 @@ namespace HowDoYouDoThis.Controllers
 
         }
 
-        private async Task<CloudBlockBlob> UploadToBlob(string filename, string containerName, byte[] imageBuffer = null, System.IO.Stream stream = null)
+        private async Task<CloudBlockBlob> UploadToBlob(string filename, byte[] imageBuffer = null, System.IO.Stream stream = null)
         {
 
             var accountName = _configuration["AzureBlob:name"];
-            var accountKey = _configuration["AzureBlob:key"]; ;
+            var accountKey = _configuration["AzureBlob:key"];
             var storageAccount = new CloudStorageAccount(new StorageCredentials(accountName, accountKey), true);
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 
-            CloudBlobContainer imagesContainer = blobClient.GetContainerReference(containerName);
+            CloudBlobContainer imagesContainer = blobClient.GetContainerReference("question-diagrams");
 
             string storageConnectionString = _configuration["AzureBlob:connectionString"];
 
