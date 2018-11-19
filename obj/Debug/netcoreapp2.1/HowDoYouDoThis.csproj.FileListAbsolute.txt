@@ -11,3 +11,4 @@ C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\Ho
 C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.RazorTargetAssemblyInfo.cache
 C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.dll
 C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.pdb
+C:\Users\David\MSA\Phase2\HowDoYouDoThis\HowDoYouDoThisBackend\HowDoYouDoThis\HowDoYouDoThis\HowDoYouDoThis\obj\Debug\netcoreapp2.1\HowDoYouDoThis.csprojAssemblyReference.cache
