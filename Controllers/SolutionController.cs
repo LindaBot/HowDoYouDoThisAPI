@@ -114,6 +114,7 @@ namespace HowDoYouDoThis.Controllers
             }
             catch (Exception)
             {
+                // No images was received
                 solutionItem.workingImage = "";
             }
 

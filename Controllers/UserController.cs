@@ -83,17 +83,42 @@ namespace HowDoYouDoThis.Controllers
 
         // POST: api/User
         [HttpPost]
-        public async Task<IActionResult> PostUserItem([FromBody] UserItem userItem)
+        public async Task<IActionResult> PostUserItem([FromForm]NewUser newUser)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            try
+            {
+                var usernamesQuery = (from m in _context.UserItem
+                                 select m.username).Distinct();
 
-            _context.UserItem.Add(userItem);
-            await _context.SaveChangesAsync();
+                var usernames = await usernamesQuery.ToListAsync();
 
-            return CreatedAtAction("GetUserItem", new { id = userItem.ID }, userItem);
+                for (int i = 0; i < usernames.Count; i++) {
+                    if (usernames[i] == newUser.username) {
+                        return BadRequest($"Same username exists, please use a different username");
+                    }
+                }
+
+
+                UserItem userItem = new UserItem();
+                userItem.firstName = newUser.firstName;
+                userItem.lastName = newUser.lastName;
+                userItem.username = newUser.username;
+                userItem.password = newUser.password;
+                userItem.dateCreated = newUser.dateCreated;
+                userItem.admin = newUser.admin;
+                userItem.TagID = newUser.TagID;
+
+                _context.UserItem.Add(userItem);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("GetUserItem", new { id = userItem.ID }, userItem);
+            }
+            catch (Exception ex) {
+                return BadRequest($"An error has occured. Details: {ex.Message}");
+            }
         }
 
         // DELETE: api/User/5
