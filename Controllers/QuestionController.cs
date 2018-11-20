@@ -53,6 +53,25 @@ namespace HowDoYouDoThis.Controllers
             return Ok(questionItem);
         }
 
+        // GET: api/Question/tag/TAGID
+        [HttpGet("/api/Question/tag/{tag}")]
+        public async Task<IActionResult> GetProblemsFromTag([FromRoute] string tag)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var questionItems = _context.QuestionItem.Where(s => s.tag == tag);
+
+            if (questionItems == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(questionItems);
+        }
+
         // PUT: api/Question/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutQuestionItem([FromRoute] int id, [FromBody] QuestionItem questionItem)
